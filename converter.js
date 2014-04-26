@@ -1,6 +1,6 @@
 function toColour() {
 
-	var output = document.getElementById('name').value; // get ascii input
+	var input = document.getElementById('input').value; // get ascii input
 	
 	var hexOutput = "";
 	
@@ -9,8 +9,8 @@ function toColour() {
 	
 	// Convert ascii to hex and distribute them appropriately into hexArray
 	// Each array element only stores 6 chars as hex colours have 6 chars,
-	for (i = 0; i < output.length; i++) {
-		hexOutput += output.charCodeAt(i).toString(16);
+	for (i = 0; i < input.length; i++) {
+		hexOutput += input.charCodeAt(i).toString(16);
 		if (hexOutput.length >= 6) {
 			hexArray[arrayNum] = hexOutput;
 			hexOutput ="";
@@ -49,7 +49,7 @@ function toColour() {
 	}
 	
 	// append hex output to html
-	document.getElementById("junk").innerHTML += hexOutput;
+	document.getElementById("junk").innerHTML = hexOutput;
 	
 	console.log(percentage);
 	console.log(style);
